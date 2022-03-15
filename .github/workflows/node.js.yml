@@ -34,10 +34,8 @@ jobs:
         host: ${{secrets.AWS_CLOUD_VM_IP}}
         username: ${{secrets.AWS_CLOUD_VM_USERNAME}}
         script: |
-          echo ssh success
-          mkdir /var/app/fayzan
           pm2 delete all
-          cd /var/app/my-app1
+          cd /home/ubuntu/my-app1
           git pull
           npm install
           pm2 start npm -- start
